@@ -3,3 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: navy;
+}
+
+.mini_box {
+    background-color: rgb(27, 114, 27);
+    border-radius: 20px;
+    text-align: center;
+    width: calc(1200px / 8);
+    height: calc(1200px / 8);
+    margin: 7px;
+}
+
+.christmas_box {
+    background-color: rgb(205, 255, 255);
+    border-radius: 20px;
+    width: 100%;
+    height: calc(1200px / 8);
+    text-align: center;
+}

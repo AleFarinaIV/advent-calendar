@@ -3,7 +3,7 @@ import { source } from './source.js';
 function  createMiniBox() {
     let currentElement = document.createElement('div');
 
-    currentElement.classList.add('box');
+    currentElement.classList.add('mini_box');
 
     return currentElement
 };
