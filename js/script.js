@@ -18,19 +18,32 @@ function createChristmasBox() {
 
 const calendar = document.getElementById('calendar');
 
-const christmasBox = document.getElementById('christmasBox')
+const christmasBox = document.getElementById('christmasBox');
 
-for (let i = 0; i < 24; i++) {
+for (let i = 0; i < 25; i++) {
 
-    let calendarBox = createMiniBox();
+    let boxContent = document.createElement('div');
 
-    calendarBox.innerText = i + 1;
+    boxContent.classList.add('box_content');
 
-    calendar.append(calendarBox);
+    boxContent.innerHTML = `
+        <img src="../images/icons/${source[i].icon}.png" alt="${source[i].icon}">
+        <span class='fw-bold'>${i+1}</span>
+    `;
+
+    if (i < 24) {
+        let calendarBox = createMiniBox();
+
+        calendarBox.append(boxContent);
+
+        calendar.append(calendarBox);
+    } else {
+        let calendarChristmasBox = createChristmasBox();
+
+        calendarChristmasBox.append(boxContent);
+
+        christmasBox.append(calendarChristmasBox);
+    }
+
+
 };
-
-let calendarChristmasBox = createChristmasBox();
-
-calendarChristmasBox.innerText = 25
-
-christmasBox.append(calendarChristmasBox);
