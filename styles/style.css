@@ -61,3 +61,7 @@ body {
         font-size: 54px;
     }
 }
+
+.bg-rose {
+    background-color: rgb(240, 127, 147);
+}

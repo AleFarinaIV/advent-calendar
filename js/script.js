@@ -5,6 +5,10 @@ function  createBox() {
 
     currentElement.classList.add('clickable', 'mini_box');
 
+    currentElement.setAttribute('data-bs-toggle', 'modal');
+    
+    currentElement.setAttribute('data-bs-target', '#exampleModal');
+
     return currentElement
 };
 
