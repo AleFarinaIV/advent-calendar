@@ -1,26 +1,18 @@
 import { source } from './source.js';
 
-function  createMiniBox() {
+function  createBox() {
     let currentElement = document.createElement('div');
 
-    currentElement.classList.add('mini_box');
+    currentElement.classList.add('clickable', 'mini_box');
 
     return currentElement
 };
 
-function createChristmasBox() {
-    let currentElement = document.createElement('div');
-
-    currentElement.classList.add('christmas_box');
-
-    return currentElement
-}
-
 const calendar = document.getElementById('calendar');
 
-const christmasBox = document.getElementById('christmasBox');
-
 for (let i = 0; i < 25; i++) {
+
+    let calendarBox = createBox();
 
     let boxContent = document.createElement('div');
 
@@ -31,19 +23,11 @@ for (let i = 0; i < 25; i++) {
         <span class='fw-bold'>${i+1}</span>
     `;
 
-    if (i < 24) {
-        let calendarBox = createMiniBox();
+    calendarBox.append(boxContent);
 
-        calendarBox.append(boxContent);
-
-        calendar.append(calendarBox);
-    } else {
-        let calendarChristmasBox = createChristmasBox();
-
-        calendarChristmasBox.append(boxContent);
-
-        christmasBox.append(calendarChristmasBox);
-    }
-
-
+    calendar.append(calendarBox);
 };
+
+calendar.lastChild.classList.remove('mini_box');
+
+calendar.lastChild.classList.add('christmas_box', 'mt-3');
