@@ -3,13 +3,13 @@ import { source } from './source.js';
 function  createBox(index) {
     let currentElement = document.createElement('div');
 
-    currentElement.classList.add('clickable', 'mini_box');
+    currentElement.classList.add('clickable', 'mini_box', 'p-0');
 
     currentElement.setAttribute('data-bs-toggle', 'modal');
     
     currentElement.setAttribute('data-bs-target', `#modal-${index}`);
 
-    return currentElement
+    return currentElement;
 };
 
 const calendar = document.getElementById('calendar');
@@ -17,7 +17,7 @@ const calendar = document.getElementById('calendar');
 for (let i = 0; i < 25; i++) {
     const modalId = `modal-${i}`;
 
-    const boxId = `box-${i}`;
+    const boxId = `${i}`;
 
     const modal_content = source[i].type === 'text' ? `<h2>${source[i].text}</h2>` : `<img src="../${source[i].url}" alt="${source[i].type}"`;
 
@@ -25,7 +25,7 @@ for (let i = 0; i < 25; i++) {
 
     let boxContent = document.createElement('div');
 
-    boxContent.setAttribute('id', `${boxId}`)
+    boxContent.setAttribute('id', `${boxId}`);
 
     boxContent.classList.add('box_content');
 
